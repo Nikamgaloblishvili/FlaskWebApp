@@ -27,7 +27,7 @@ class Users(db.Model):
 
 @app.route("/")
 def home():
-    # users = Users(name="nika", last_name="mgaloblishvili", personal_number="010110185947")
+    # users = Users(name="dasda", last_name="dasad", personal_number="12321321")
     # db.session.add(users)
     # db.session.commit()
     # Users.query.delete()

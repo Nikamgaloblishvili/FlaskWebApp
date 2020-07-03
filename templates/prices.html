@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1>ბენზინის ფასები</h1>
+
+
+    {% for i in price_data %}
+
+        <p>{{i}}</p>
+
+    {% endfor %}
+
+{% endblock %}

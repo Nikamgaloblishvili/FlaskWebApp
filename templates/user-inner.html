@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    {% if user %}
+        <h3>{{ user.name }}</h3>
+        <span>{{ user.last_name }}</span>
+    {% else %}
+        <span>მომხმარებლის პროფილი ვერ მოიძებნა</span>
+    {% endif %}
+
+{% endblock %}

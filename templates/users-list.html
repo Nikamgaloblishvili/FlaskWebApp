@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>რეგისტრირებული მომხარებლები</h1>
+
+<a href="/registration" class="btn btn-default" style="float: right">მომხმარებლის რეგისტრაცია</a>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>სახელი</th>
+        <th>გვარი</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for user in users_data %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>
+            <a href="https://qrcode.tec-it.com/API/QRCode?data=http%3A%2F%2Flocalhost%3A5000%2Fprofile%2F{{ user.id }}"
+               target="_blank">
+                <img src="https://qrcode.tec-it.com/API/QRCode?data=http%3A%2F%2Flocalhost%3A5000%2Fprofile%2F{{ user.id }}"
+                     width="50" alt="userimage">
+            </a>
+        </td>
+        <td>
+            <a href="/profile/{{ user.id }}" class="btn btn-info">დეტალურად</a>
+            <a href="/profile/delete/user/{{ user.id }}" class="btn btn-danger">წაშლა</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

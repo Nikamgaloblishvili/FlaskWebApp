@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>ვალუტის კურსი</h1>
+
+
+
+<div class="row mb-2" style="font-weight: bold;background: #3a3a3a;color: #fff; padding: 10px 0;">
+    <div class="col-md-2">
+        ფოტო
+    </div>
+    <div class="col-md-5">ვალუტა</div>
+    <div class="col-md-2">თიბისის კურსი</div>
+    <div class="col-md-3">ეროვნული ბანკის კურსი</div>
+</div>
+
+{% for i in currency_data %}
+
+
+<div class="row mb-2" style="border-bottom: 1px solid #ddd; padding-bottom: 8px;">
+    <div class="col-md-2">
+        <img
+                src="http://online.cloud.com.ge/resources/currency/v1/flags/{{ i['currency'].lower() }}.png"
+                width="48"
+                height="32"
+                onerror="this.src = 'http://online.cloud.com.ge/resources/currency/v1/flags/usd.png' "
+        />
+    </div>
+    <div class="col-md-5">{{ i['currency'] }}  - {{ i['currencyName'] }}</div>
+    <div class="col-md-2">{{ i['centerRateTbcr'] }}</div>
+    <div class="col-md-3">{{ i['centerRateCbr'] }}</div>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}
